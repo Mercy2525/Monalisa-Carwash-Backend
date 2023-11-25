@@ -7,6 +7,8 @@ name = "pypi"
 flask-sqlalchemy = "*"
 flask = "*"
 flask-migrate = "*"
+faker = "*"
+flask-restful = "*"
 
 [dev-packages]
 
