@@ -1,8 +1,9 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy_serializer import SerializerMixin
 
 db = SQLAlchemy()
 
-class Product(db.Model):
+class Product(db.Model,SerializerMixin):
     __tablename__='products'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -12,7 +13,7 @@ class Product(db.Model):
     image=db.Column(db.String)
 
 
-class Appointment(db.Model):
+class Appointment(db.Model,SerializerMixin):
     __tablename__='appointments'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -27,7 +28,7 @@ class Appointment(db.Model):
     appointment_date=db.Column(db.DateTime, default=db.func.current_timestamp())
     time_frame= db.Column(db.String)
 
-class Feedback(db.Model):
+class Feedback(db.Model, SerializerMixin):
     __tablename__='feedbacks'
 
     id = db.Column(db.Integer, primary_key=True)
